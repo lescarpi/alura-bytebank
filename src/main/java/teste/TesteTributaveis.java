@@ -1,3 +1,8 @@
+package teste;
+
+import modelo.CalculadorDeImposto;
+import modelo.ContaCorrente;
+import modelo.SeguroDeVida;
 
 public class TesteTributaveis {
 
