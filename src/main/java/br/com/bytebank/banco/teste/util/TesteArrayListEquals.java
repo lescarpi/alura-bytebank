@@ -24,8 +24,17 @@ public class TesteArrayListEquals {
             System.out.println(conta.toString() + ", Saldo: " + conta.getSaldo());
         }
 
+        Comparator<Conta> comparator = new Comparator<Conta>() {
+            @Override
+            public int compare(Conta c1, Conta c2) {
+
+                return Integer.compare(c1.getNumero(), c2.getNumero());
+
+            }
+        };
+
         System.out.println("------------------- ORDENANDO PELO NÚMERO -------------------");
-        contas.sort(new NumeroContaComparator());
+        contas.sort(comparator);
 
         for (Conta conta : contas) {
             System.out.println(conta.toString() + ", Saldo: " + conta.getSaldo());
@@ -46,7 +55,7 @@ public class TesteArrayListEquals {
         }
 
         System.out.println("------------------- ORDEM REVERSA PELO NÚMERO -------------------");
-        contas.sort(Collections.reverseOrder(new NumeroContaComparator()));
+        contas.sort(Collections.reverseOrder(comparator));
 
         for (Conta conta : contas) {
             System.out.println(conta.toString() + ", Saldo: " + conta.getSaldo());
