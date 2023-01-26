@@ -34,28 +34,22 @@ public class TesteTempoLists {
         // Testes com iteração usando LinkedList
         start = System.currentTimeMillis();
         LinkedList<Integer> linkedList1 = new LinkedList<Integer>();
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100000; i++) {
             linkedList1.add(i);
         }
         for (Integer i : linkedList1) {
-            i += 1;
-            for (Integer j : linkedList1) {
-                j += 1;
-            }
+            linkedList1.set(i, i+1);
         }
         System.out.println("LinkedList demorou " + (System.currentTimeMillis() - start) + " millisegundos para adicionar e iterar.");
 
         // Testes com iteração usando ArrayList
         start = System.currentTimeMillis();
         LinkedList<Integer> arrayList1 = new LinkedList<Integer>();
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100000; i++) {
             arrayList1.add(i);
         }
         for (Integer i : arrayList1) {
-            i += 1;
-            for (Integer j : arrayList1) {
-                j += 1;
-            }
+            arrayList1.set(i, i+1);
         }
         System.out.println("ArrayList demorou " + (System.currentTimeMillis() - start) + " millisegundos para adicionar e iterar.");
 
