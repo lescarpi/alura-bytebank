@@ -25,14 +25,14 @@ public class TesteArrayListEquals {
             System.out.println(conta.toString() + ", Saldo: " + conta.getSaldo());
         }
 
-        Comparator<Conta> comparator = (Conta c1, Conta c2) -> {
+        Comparator<Conta> comparator = (c1, c2) -> {
                 return Integer.compare(c1.getNumero(), c2.getNumero());
         };
 
         System.out.println("------------------- ORDENANDO PELO NÚMERO -------------------");
         contas.sort(comparator);
 
-        contas.forEach(conta -> System.out.println(conta.toString() + ", Saldo: " + conta.getSaldo()));
+        contas.stream().forEach(conta -> System.out.println(conta.toString() + ", Saldo: " + conta.getSaldo()));
 
         System.out.println("------------------- ORDEM NATURAL PELO SALDO -------------------");
         Collections.sort(contas);
